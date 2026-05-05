@@ -1,0 +1,534 @@
+### ============== Authors ==============
+### Add author 1
+POST http://localhost:8080/api/v0.1/admin/author
+Content-Type: application/json
+
+{
+  "firstName": "Henryk",
+  "lastName": "Sienkiewicz",
+  "nationality": "Polska"
+}
+
+### Add author 2
+POST http://localhost:8080/api/v0.1/admin/author
+Content-Type: application/json
+
+{
+  "firstName": "Albert",
+  "lastName": "Camus",
+  "nationality": "Francja"
+}
+
+### Add author 3
+POST http://localhost:8080/api/v0.1/admin/author
+Content-Type: application/json
+
+{
+  "firstName": "George",
+  "lastName": "Orwell",
+  "nationality": "Indie"
+}
+
+### Add author 4 (too long first name)
+POST http://localhost:8080/api/v0.1/admin/author
+Content-Type: application/json
+
+{
+  "firstName": "dhashduaihdaidhaishduahduiaidgadyuhiayuafghaiougfdhwoifgbduygsvdfuwvefybwefvwuyfeldvfy",
+  "lastName": "Orwell",
+  "nationality": "Indie"
+}
+
+### ============== BOOKS ==============
+### Add abook 1 aythor 1
+POST http://localhost:8080/api/v0.1/admin/book/1
+Content-Type: application/json
+
+{
+  "title": "Quo Vadis",
+  "bookGenreType": "FICTION",
+  "releaseYear": 1896,
+  "pricePerDay": 2.50,
+  "isbn": "9788301000011"
+}
+
+### Add book 2 author 1
+POST http://localhost:8080/api/v0.1/admin/book/1
+Content-Type: application/json
+
+{
+  "title": "Potop",
+  "bookGenreType": "FICTION",
+  "releaseYear": 1886,
+  "pricePerDay": 5.00,
+  "isbn": "9788301000022"
+}
+
+### Add book 3 author 1
+POST http://localhost:8080/api/v0.1/admin/book/1
+Content-Type: application/json
+
+{
+  "title": "W pustyni i w puszczy",
+  "bookGenreType": "FANTASY",
+  "releaseYear": 1911,
+  "pricePerDay": 1.20,
+  "isbn": "9788301000033"
+}
+
+### Add book 1 author 2
+POST http://localhost:8080/api/v0.1/admin/book/2
+Content-Type: application/json
+
+{
+  "title": "Obcy",
+  "bookGenreType": "FICTION",
+  "releaseYear": 1942,
+  "pricePerDay": 3.50,
+  "isbn": "9782070360024"
+}
+
+### Add book 2 author 1
+POST http://localhost:8080/api/v0.1/admin/book/2
+Content-Type: application/json
+
+{
+  "title": "Dżuma",
+  "bookGenreType": "FICTION",
+  "releaseYear": 1947,
+  "pricePerDay": 4.00,
+  "isbn": "9782070360420"
+}
+
+### Add book 3 author 2
+POST http://localhost:8080/api/v0.1/admin/book/2
+Content-Type: application/json
+
+{
+  "title": "Upadek",
+  "bookGenreType": "FICTION",
+  "releaseYear": 1956,
+  "pricePerDay": 0.00,
+  "isbn": "9782070360826"
+}
+
+### Add book 1 author id: 3
+POST http://localhost:8080/api/v0.1/admin/book/3
+Content-Type: application/json
+
+{
+  "title": "Rok 1984",
+  "bookGenreType": "FICTION",
+  "releaseYear": 1953,
+  "pricePerDay": 1.00,
+  "isbn": "1374839264812"
+}
+### Add book 2 author id: 3
+POST http://localhost:8080/api/v0.1/admin/book/3
+Content-Type: application/json
+
+{
+  "title": "Folwark zwierzęcy",
+  "bookGenreType": "FICTION",
+  "releaseYear": 1945,
+  "pricePerDay": 3.00,
+  "isbn": "3247263847163"
+}
+
+### Add book 3 author 3
+POST http://localhost:8080/api/v0.1/admin/book/3
+Content-Type: application/json
+
+{
+  "title": "W hołdzie Katalonii",
+  "bookGenreType": "BIOGRAPHY",
+  "releaseYear": 1938,
+  "pricePerDay": 0.00,
+  "isbn": "2374859375038"
+}
+
+### ============== BORROWERS ==============
+### Add borrower 1
+POST http://localhost:8080/api/v0.1/admin/borrower
+Content-Type: application/json
+
+{
+  "firstName": "Kacper",
+  "lastName": "Ciepienka",
+  "email": "kacper.ciepie@gmail.com"
+}
+
+### Add borrower 2
+POST http://localhost:8080/api/v0.1/admin/borrower
+Content-Type: application/json
+
+{
+  "firstName": "Jakub",
+  "lastName": "Mydłowski",
+  "email": "jakub.mydlowski@wp.pl"
+}
+
+### Add borrower 3
+POST http://localhost:8080/api/v0.1/admin/borrower
+Content-Type: application/json
+
+{
+  "firstName": "Kaja",
+  "lastName": "Zalewska",
+  "email": "kaja.zal@gmail.com"
+}
+
+### Add borrower 4 (invalid card number should be next (1003))
+POST http://localhost:8080/api/v0.1/admin/borrower
+Content-Type: application/json
+
+{
+  "firstName": "Anonym",
+  "lastName": "Invalid",
+  "email": "example@gmail.com",
+  "libraryCardNumber": 63728
+}
+
+### ============== LOANS ==============
+### Add loan 1 borrower 1
+POST http://localhost:8080/api/v0.1/admin/loan/9788301000011/1001Content-Type: application/json
+
+{
+
+}
+
+### Add loan 2 borrower 1
+POST http://localhost:8080/api/v0.1/admin/loan/9788301000022/1001
+Content-Type: application/json
+
+{
+
+}
+
+### Add loan 1 borrower 2
+POST http://localhost:8080/api/v0.1/admin/loan/9782070360024/1000
+Content-Type: application/json
+
+{
+
+}
+
+### Add loan 2 borrower 2
+POST http://localhost:8080/api/v0.1/admin/loan/9782070360420/1000
+Content-Type: application/json
+
+{
+
+}
+
+### Add loan 3 borrower 2
+POST http://localhost:8080/api/v0.1/admin/loan/9782070360826/1000
+Content-Type: application/json
+
+{
+
+}
+
+### Add loan 1 borrower 3
+POST http://localhost:8080/api/v0.1/admin/loan/1374839264812/1002
+Content-Type: application/json
+
+{
+
+}
+
+### Add loan 2 borrower 3
+POST http://localhost:8080/api/v0.1/admin/loan/3247263847163/1002
+Content-Type: application/json
+
+{
+
+}
+
+### Add loan 3 borrower 3
+POST http://localhost:8080/api/v0.1/admin/loan/2374859375038/1002
+Content-Type: application/json
+
+{
+
+}
+
+### Add loan 4 borrower 3 (already borrowed)
+POST http://localhost:8080/api/v0.1/admin/loan/9782070360826/1002
+Content-Type: application/json
+
+{
+
+}
+
+### ============== PUT's ==============
+### New book price
+PUT http://localhost:8080/api/v0.1/admin/book/3247263847163/new-price?newPrice=10.0
+### New available status book
+PUT http://localhost:8080/api/v0.1/admin/book/3247263847163/new-available?newAvailable=false
+### New borrower acc status
+PUT http://localhost:8080/api/v0.1/admin/borrower/1000/update-acc-status?accStatus=INACTIVE
+### New borrower active loans
+PUT http://localhost:8080/api/v0.1/admin/borrower/1002/update-active-loans?newActiveLoanCount=-1
+### New borrower email
+PUT http://localhost:8080/api/v0.1/admin/borrower/1002/update-email?newEmail=jacek.walezy@gmail.com
+### Retun book
+PUT http://localhost:8080/api/v0.1/admin/loan/3/return
+
+### ============== DELETE ==============
+DELETE http://localhost:8080/api/v0.1/admin/book/2374859375038
+
+### ================== GETS for USER ==================
+### find all authors
+GET http://localhost:8080/api/v0.1/user/author
+### search/first-name
+GET http://localhost:8080/api/v0.1/user/author/search/first-name?firstName=Albert
+### search/last-name
+GET http://localhost:8080/api/v0.1/user/author/search/last-name?lastName=Camus
+### search/full-name
+GET http://localhost:8080/api/v0.1/user/author/search/full-name?firstName=Albert&lastName=Camus
+### search/nationality
+GET http://localhost:8080/api/v0.1/user/author/search/nationality?nationality=POLSKA
+### search/last-name-and-nationality
+GET http://localhost:8080/api/v0.1/user/author/search/last-name-and-nationality?lastName=Camus&nationality=Francja
+
+### Books
+### by isbn
+GET http://localhost:8080/api/v0.1/user/book/search/3247263847163
+### all books
+GET http://localhost:8080/api/v0.1/user/book
+### search/title
+GET http://localhost:8080/api/v0.1/user/book/search/title?title=potop
+### search/author/first-name
+GET http://localhost:8080/api/v0.1/user/book/search/author/first-name?authorFirstName=henryk
+### search/author/last-name
+GET http://localhost:8080/api/v0.1/user/book/search/author/last-name?authorLastName=sienkiewicz
+### search/author/full-name
+GET http://localhost:8080/api/v0.1/user/book/search/author/full-name?authorFirstName=Albert&authorLastName=Camus
+### search/author/nationality
+GET http://localhost:8080/api/v0.1/user/book/search/author/nationality?nationality=Polska
+### search/type
+GET http://localhost:8080/api/v0.1/user/book/search/type?bookGenreType=FICTION
+### search/release-lesser
+GET http://localhost:8080/api/v0.1/user/book/search/release-lesser?releaseYearIsLessThan=1910
+### search/release-greater
+GET http://localhost:8080/api/v0.1/user/book/search/release-greater?releaseYearIsGreaterThan=1230
+### search/releases-between
+GET http://localhost:8080/api/v0.1/user/book/search/releases-between?releaseYearAfter=1300&releaseYearBefore=1950
+### search/price-lesser
+GET http://localhost:8080/api/v0.1/user/book/search/price-lesser?pricePerDayIsLessThan=2.00
+### search/price-greater
+GET http://localhost:8080/api/v0.1/user/book/search/price-greater?pricePerDayIsGreaterThan=2.00
+### search/price-range
+GET http://localhost:8080/api/v0.1/user/book/search/price-range?pricePerDayAfte=1.00&pricePerDayBefore=3.00
+### search/available true
+GET http://localhost:8080/api/v0.1/user/book/search/available?isAvailable=true
+### search/available false
+GET http://localhost:8080/api/v0.1/user/book/search/available?isAvailable=false
+
+
+### ================== GETS for ADMIN ==================
+### ============== ADMIN: AUTHORS ==============
+### search/id
+GET http://localhost:8080/api/v0.1/admin/author/search/1
+
+### all authors
+GET http://localhost:8080/api/v0.1/admin/author
+
+### search/first-name
+GET http://localhost:8080/api/v0.1/admin/author/search/first-name?firstName=Albert
+
+### search/last-name
+GET http://localhost:8080/api/v0.1/admin/author/search/last-name?lastName=Camus
+
+### search/full-name
+GET http://localhost:8080/api/v0.1/admin/author/search/full-name?firstName=Albert&lastName=Camus
+
+### search/nationality
+GET http://localhost:8080/api/v0.1/admin/author/search/nationality?nationality=Francja
+
+### search/last-name-and-nationality
+GET http://localhost:8080/api/v0.1/admin/author/search/last-name-and-nationality?lastName=Camus&nationality=Francja
+
+
+### ============== ADMIN: BOOKS ==============
+### find by isbn
+GET http://localhost:8080/api/v0.1/admin/book/9788301000011
+
+### all books
+GET http://localhost:8080/api/v0.1/admin/book
+
+### search/title
+GET http://localhost:8080/api/v0.1/admin/book/search/title?title=Potop
+
+### search/author/id
+GET http://localhost:8080/api/v0.1/admin/book/search/author/1
+
+### search/author/first-name
+GET http://localhost:8080/api/v0.1/admin/book/search/author/first-name?authorFirstName=Henryk
+
+### search/author/last-name
+GET http://localhost:8080/api/v0.1/admin/book/search/author/last-name?authorLastName=Sienkiewicz
+
+### search/author/full-name
+GET http://localhost:8080/api/v0.1/admin/book/search/author/full-name?authorFirstName=Henryk&authorLastName=Sienkiewicz
+
+### search/author/nationality
+GET http://localhost:8080/api/v0.1/admin/book/search/author/nationality?nationality=Polska
+
+### search/type
+GET http://localhost:8080/api/v0.1/admin/book/search/type?bookGenreType=FICTION
+
+### search/release-lesser
+GET http://localhost:8080/api/v0.1/admin/book/search/reless-lesser?releaseYearIsLessThan=1950
+
+### search/release-greater
+GET http://localhost:8080/api/v0.1/admin/book/search/reless-greater?releaseYearIsGreaterThan=1900
+
+### search/releases-between
+GET http://localhost:8080/api/v0.1/admin/book/search/relesses-between?releaseYearAfter=1800&releaseYearBefore=2000
+
+### search/price-lesser
+GET http://localhost:8080/api/v0.1/admin/book/search/price-lesser?pricePerDayIsLessThan=5.00
+
+### search/price-greater
+GET http://localhost:8080/api/v0.1/admin/book/search/price-greater?pricePerDayIsGreaterThan=1.00
+
+### search/price-range
+GET http://localhost:8080/api/v0.1/admin/book/search/price-range?pricePerDayAfter=1.00&pricePerDayBefore=10.00
+
+### search/available
+GET http://localhost:8080/api/v0.1/admin/book/search/available?isAvailable=true
+
+
+### ============== ADMIN: BORROWERS ==============
+### search/card-number
+GET http://localhost:8080/api/v0.1/admin/borrower/1000
+
+### search/email
+GET http://localhost:8080/api/v0.1/admin/borrower/search/email?email=kacper.ciepie@gmail.com
+
+### all borrowers (with pagination)
+GET http://localhost:8080/api/v0.1/admin/borrower?page=0&size=5&sort=lastName,asc
+
+### search/first-name
+GET http://localhost:8080/api/v0.1/admin/borrower/search/first-name?firstName=Kacper&page=0&size=10
+
+### search/last-name
+GET http://localhost:8080/api/v0.1/admin/borrower/search/last-name?lastName=Ciepienka
+
+### search/full-name
+GET http://localhost:8080/api/v0.1/admin/borrower/search/full-name?firstName=Kacper&lastName=Ciepienka
+
+### search/active-loans-lesser
+GET http://localhost:8080/api/v0.1/admin/borrower/search/active-loans-lesser?activeLoansCountIsLessThan=3
+
+### search/active-loans-greater
+GET http://localhost:8080/api/v0.1/admin/borrower/search/active-loans-greater?activeLoansCountIsGreaterThan=1&page=0&size=20
+
+### search/active-loans-range
+GET http://localhost:8080/api/v0.1/admin/borrower/search/active-loans-range?activeLoansCountAfter=1&activeLoansCountBefore=5
+
+### search/acc-status
+GET http://localhost:8080/api/v0.1/admin/borrower/search/acc-status?borrowerAccStatus=ACTIVE
+
+### search/total-loans-lesser
+GET http://localhost:8080/api/v0.1/admin/borrower/search/total-loans-lesser?loanCountIsLessThan=10
+
+### search/total-loans-greater
+GET http://localhost:8080/api/v0.1/admin/borrower/search/total-loans-greater?loanCountIsGreaterThan=5&sort=loanCount,desc
+
+### search/total-loans-range
+GET http://localhost:8080/api/v0.1/admin/borrower/search/total-loans-range?loanCountAfter=0&loanCountBefore=100
+
+### search/acc-type
+GET http://localhost:8080/api/v0.1/admin/borrower/search/acc-type?borrowerAccType=STANDARD
+
+### ============== ADMIN: LOANS ==============
+
+### search/id
+GET http://localhost:8080/api/v0.1/admin/loan/1
+
+### all loans
+GET http://localhost:8080/api/v0.1/admin/loan?page=0&size=10&sort=loanDate,desc
+
+### search/borrower/first-name
+GET http://localhost:8080/api/v0.1/admin/loan/search/borrower/first-name?borrowerFirstName=Kacper
+
+### search/borrower/last-name
+GET http://localhost:8080/api/v0.1/admin/loan/search/borrower/last-name?borrowerLastName=Ciepienka
+
+### search/borrower/full-name
+GET http://localhost:8080/api/v0.1/admin/loan/search/borrower/full-name?borrowerFirstName=Kacper&borrowerLastName=Ciepienka
+
+### search/borrower/email
+GET http://localhost:8080/api/v0.1/admin/loan/search/borrower/email?borrowerEmail=kacper.ciepie@gmail.com
+
+### search/borrower/card-number
+GET http://localhost:8080/api/v0.1/admin/loan/search/borrower/1000
+
+### search/borrower/acc-type
+GET http://localhost:8080/api/v0.1/admin/loan/search/borrower/acc-type?borrowerBorrowerAccType=VIP
+
+### search/book/isbn
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/9788301000011
+
+### search/book/author/full-name
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/author/full-name?bookAuthorFirstName=Henryk&bookAuthorLastName=Sienkiewicz
+
+### search/book/author/id
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/author/1
+
+### search/book/price-less
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/price-less?bookPricePerDay=2.00
+
+### search/book/price-greater
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/price-greater?bookPricePerDay=5.00
+
+### search/book/price-range
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/price-range?bookPricePerDayAfter=1.00&bookPricePerDayBefore=4.00
+
+### search/book/type
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/type?bookBookGenreType=FICTION
+
+### search/book/release-less
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/release-less?releaseYear=1950
+
+### search/book/release-greater
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/release-greater?releaseYear=1900
+
+### search/book/releases-range
+GET http://localhost:8080/api/v0.1/admin/loan/search/book/releases-range?releaseYearAfter=1850&releaseYearBefore=2024
+
+### search/date
+GET http://localhost:8080/api/v0.1/admin/loan/search/date?loanDate=2026-05-05
+
+### search/date-after
+GET http://localhost:8080/api/v0.1/admin/loan/search/date-after?loanDateAfter=2026-05-01
+
+### search/date-before
+GET http://localhost:8080/api/v0.1/admin/loan/search/date-before?loanDateBefore=2026-12-31
+
+### search/date-between
+GET http://localhost:8080/api/v0.1/admin/loan/search/date-between?loanDateAfter=2026-01-01&loanDateBefore=2026-12-31
+
+### search/penalty-less
+GET http://localhost:8080/api/v0.1/admin/loan/search/penalty-less?penaltyFeeIsLessThan=10.00
+
+### search/penalty-greater
+GET http://localhost:8080/api/v0.1/admin/loan/search/penalty-greter?penaltyFeeIsGreaterThan=0.00
+
+### search/penalty-range
+GET http://localhost:8080/api/v0.1/admin/loan/search/penalty-range?penaltyFeeAfter=1.00&penaltyFeeBefore=50.00
+
+### search/final-price-less
+GET http://localhost:8080/api/v0.1/admin/loan/search/final-price-less?finalPriceIsLessThan=20.00
+
+### search/final-price-greater
+GET http://localhost:8080/api/v0.1/admin/loan/search/final-price-greater?finalPriceIsGreaterThan=5.00
+
+### search/final-price-range
+GET http://localhost:8080/api/v0.1/admin/loan/search/final-price-range?finalPriceAfter=10.00&finalPriceBefore=100.00
+
+### search/status
+GET http://localhost:8080/api/v0.1/admin/loan/search/status?loanStatus=RETURNED
